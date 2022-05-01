@@ -1,0 +1,99 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+
+<link rel='stylesheet' type='text/css' media='screen' href="{% static 'styles/index.css' %}">
+
+<div class="inner-layer-main">
+<!--prolly remove thsi tag-->
+<h1>Home Page</h1>
+
+<!--gonna make slideshow with this-->
+<div class='image-sizeup'>
+    <section>
+        <img src="{% static 'images/opfirst.jpeg' %}"/>
+    </section>
+</div>
+
+
+<!--Basic introduction of Computer Vision-->
+<div>
+<section>
+    <h2>COMPUTER VISION</h2>
+    <p><i>playing around with image</i></p>
+</section>
+
+<h1>Introduction</h1>
+<section class="home-section-p">
+    <!--intro-->
+    <p>
+        One of the most powerful and compelling types of AI is computer vision which you’ve almost surely experienced in any number of ways without even knowing. Here’s a look at what it is, how it works, and why it’s so awesome (and is only going to get better).
+    <p>
+    <p>
+        Computer vision is the field of computer science that focuses on replicating parts of the complexity of the human vision system and enabling computers to identify and process objects in images and videos in the same way that humans do. Until recently, computer vision only worked in limited capacity.
+    </p>
+    <p> 
+        Thanks to advances in artificial intelligence and innovations in deep learning and neural networks, the field has been able to take great leaps in recent years and has been able to surpass humans in some tasks related to detecting and labeling objects.
+    <p>
+    <p>
+        One of the driving factors behind the growth of computer vision is the amount of data we generate today that is then used to train and make computer vision better.
+    </p>
+    <p>
+        Object detection refers to the capability of computer and software systems to locate objects in an image/scene and identify each object.
+        Object detection has been widely used for face detection, vehicle detection, pedestrian counting, web images, 
+        security systems and driverless cars. There are many ways object detection can be used as well in many fields of practice.
+    </p>
+</section>
+{% comment %} vid {% endcomment %}
+<div class="home-vid">
+<iframe width="600" height="350" src="https://www.youtube.com/embed/LTlZy-OVWkM" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+</div>
+
+<hr>
+<hr>
+
+<h1>How Computer Vision Works</h1>
+<section class="home-section-p">
+    {% comment %} how computer vision works {% endcomment %}
+    <p>
+        One of the major open questions in both Neuroscience and Machine Learning is: How exactly do our brains work, and how can we approximate that with our own algorithms? The reality is that there are very few working and comprehensive theories of brain computation; so despite the fact that Neural Nets are supposed to “mimic the way the brain works,” nobody is quite sure if that’s actually true.
+    </p>
+    <p>
+        The same paradox holds true for computer vision — since we’re not decided on how the brain and eyes process images, it’s difficult to say how well the algorithms used in production approximate our own internal mental processes.
+    </p>
+    <p>   
+        On a certain level Computer vision is all about pattern recognition. So one way to train a computer how to understand visual data is to feed it images, lots of images thousands, millions if possible that have been labeled, and then subject those to various software techniques, or algorithms, that allow the computer to hunt down patterns in all the elements that relate to those labels.
+    </p>
+    <p>
+     So, for example, if you feed a computer a million images of cats, it will subject them all to algorithms that let them analyze the colors in the photo, the shapes, the distances between the shapes, where objects border each other, and so on, so that it identifies a profile of what “cat” means. When it’s finished, the computer will (in theory) be able to use its experience if fed other unlabeled images to find the ones that are of cat.
+    </p>
+</section>
+{% comment %} vid {% endcomment %}
+<div class="home-vid">
+<iframe width="600" height="350" src="https://www.youtube.com/embed/OcycT1Jwsns" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+</div>
+
+<hr>
+<hr>
+
+<h1>How long does it take to decipher the image</h1>
+<section class="home-section-p">
+    <p>
+        In short not much. That’s the key to why computer vision is so thrilling: Whereas in the past even supercomputers might take days or weeks or even months to chug through all the calculations required, today’s ultra-fast chips and related hardware, along with the a speedy, reliable internet and cloud networks, make the process lightning fast. Once crucial factor has been the willingness of many of the big companies doing AI research to share their work Facebook, Google, IBM, and Microsoft, notably by open sourcing some of their machine learning work.
+    </p>
+    <p>
+        This allows others to build on their work rather than starting from scratch. As a result, the AI industry is cooking along, and experiments that not long ago took weeks to run might take 15 minutes today. And for many real-world applications of computer vision, this process all happens continuously in microseconds, so that a computer today is able to be what scientists call “situationally aware.”
+    </p>
+<section>
+</div>
+
+<!--image of cat-->
+<div class="home-cat">
+    <img src="{% static 'images/home_decipher.jpeg' %}"/>
+</div>
+
+</div>
+
+{% endblock content %}

@@ -1,0 +1,146 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+
+<link rel='stylesheet' type='text/css' media='screen' href="{% static 'styles/index.css' %}"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/themes/prism.min.css"/>
+
+<div class="inner-layer-main">
+<!--gotta put under teh image tag-->
+<h1>Detector</h1>
+
+<!--one image to fill the space-->
+<div class='image-sizeup'>
+    <section>
+        <img src="{% static 'images/opfirst.jpeg' %}"/>
+    </section>
+</div>
+
+<!--Introduction of Object Detection-->
+<div>
+<section>
+    <h2>OBJECT DETECTION</h2>
+    <p><i>Using Python</i></p>
+</section>
+
+<section class="home-section-p">
+    <p>
+        Object detection refers to the capability of computer and software systems to locate objects in an image/scene and identify each object.
+        Object detection has been widely used for face detection, vehicle detection, pedestrian counting, web images, 
+        security systems and driverless cars. There are many ways object detection can be used as well in many fields of practice.
+    </p>
+</section>
+
+</div>
+
+<!--Code Explanantion-->
+{% comment %} <div  class="coding"> {% endcomment %}
+<section>
+
+    <div class="coding">
+        <h3>Importing Libraries</h3>
+        <p> You need to import the following libraries</p>
+        <hr>
+        <div>
+            <pre>
+            <code>
+            import cv2
+            import matplotlib.pyplot as plt
+            </code>
+            </pre>
+        </div>
+    </div>
+     
+    <br>
+    
+    <div class="coding">
+        <h3>Reading some files</h3>
+        <p> You need to store this files into a variable for further operations</p>
+        <hr>
+        <div>
+            <pre>
+            <code>
+                config_file = 'ssd_mobilenet_v3_large_coco_2020_01_14.pbtxt'<br>
+                frozen_model = 'fol/frozen_inference_graph.pb'<br>
+            </code>
+        </pre>
+        </div>
+      </div>
+
+      <br>
+
+      <div class="coding">
+        <h3>Loading the model</h3>
+        <p> hello world</p>
+        <hr>
+        <div>
+            <pre>
+            <code>
+                model = cv2.dnn_DetectionModel(frozen_model, config_file)
+            </code>
+        </pre>
+        </div>
+      </div>
+
+    <br>
+
+      <div class="coding">
+        <h3>Getting the labels</h3>
+        <p> To get the 80 labels from 'labels.txt' file</p>
+        <hr>
+        <div>
+            <pre>
+            <code>
+                classLabels = []<br>
+                file_name = 'labels.txt'<br>
+                with open(file_name,'rt') as fpt:<br>
+                classLabels = fpt.read().rstrip('\n').split('\n')<br>
+            </code>
+        </pre>
+        </div>
+      </div>
+    
+      <br>
+
+      <div class="coding">
+        <h3>Setting up the model</h3>
+        <p> follow these steps to setup the model</p>
+        <hr>
+        <di>
+            <pre>
+            <code>
+                model.setInputSize(320, 320)<br>
+                model.setInputScale(1.0/127.5)<br>
+                model.setInputMean((127.5, 127.5, 127.5))<br>
+                model.setInputSwapRB(True)<br>
+            </code>
+        </pre>
+        </di>
+      </div>
+    
+      <br>
+
+      <div class="coding">
+        <h3>Loading the image and detecting the objects</h3>
+        <p> We can use opencv library to load the image that we want to work on</p>
+        <hr>
+        <div>
+            <pre>
+            <code>
+                img = cv2.imread('image2.jpg')<br>
+                ClassIndex, confidece, bbox = model.detect(img, confThreshold=0.5)<br>
+                font_scale = 3<br>
+                font = cv2.FONT_HERSHEY_PLAIN<br>
+                for ClassInd, conf, boxes in zip(ClassIndex.flatten(), confidece.flatten(), bbox):<br>
+                cv2.rectangle(img,boxes,(255, 0, 0), 2)<br>
+                cv2.putText(img, classLabels[ClassInd-1], (boxes[0], boxes[1] + 40), font, fontScale=font_scale, color=(0,255,0), thickness=3)<br>
+            </code>
+        </pre>
+        </div>
+      </div>
+      
+    </section>
+{% comment %} </div> {% endcomment %}
+</div>
+
+{% endblock content %}

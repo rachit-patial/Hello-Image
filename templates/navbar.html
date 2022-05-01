@@ -1,0 +1,14 @@
+{% load static %}
+<link rel='stylesheet' type='text/css' media='screen' href="{% static 'styles/index.css' %}">
+<!--I am using navbar-cust class-->
+<header class='navbar-cust'>
+    <img src="{% static 'images/logo.png'%}"/>
+    <nav>
+        <ul>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'detector' %}">Detector</a></li>
+        <li><a href="{% url 'anpr' %}">ANPR</a></li>
+        <li><a href="{% url 'books' %}">Books</a></li>
+        </ul>
+    </nav>
+</header>

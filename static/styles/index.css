@@ -1,0 +1,215 @@
+/*navbar*/
+.navbar-cust img {
+    height: 40px;
+    margin-left: 40px;
+}
+
+.navbar-cust {
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 25px 0 purple;
+}
+
+.navbar-cust * {
+    display: inline;
+}
+
+.navbar-cust li {
+    margin: 20px;
+}
+
+.navbar-cust a {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: gray;
+    padding: 10px;
+}
+
+.navbar-cust a:hover {
+    background-color: #2c3e50;
+    border: 1px solid #333;
+}
+
+
+/*inner layer to main*/
+.inner-layer-main {
+    margin: auto;
+    width: 95%;
+    text-align: center;
+    background-color: white;
+    /* border: 5px solid gray; */
+    border: none;
+}
+
+/*main*/
+.main-body-div {
+    margin: auto;
+    width: 80%;
+    padding: 10px;
+    background-color: lightgrey;
+    /* border: 5px solid gray; */
+    border: none;
+}
+
+/*Body*/
+body {
+    /* background: linear-gradient(335deg, rgba(255,140,107,1) 0%, rgba(255,228,168,1) 100%); */
+    background: white;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+/*image*/
+.image-sizeup img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    height: 400px;
+    
+}
+
+/* ============================================================================= */
+
+/*footer*/
+footer.foot-cust{
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+.foot-cust a {
+    height: 80px;
+    width: 90px;
+    background-color: lightgray;
+    border-radius: 50px;
+    text-align: center;
+    margin: 10px;
+    line-height: 100px;
+    box-shadow: 1px 4px 2px 2px darkslategray;
+}
+
+.foot-cust a i {
+    transition: all 0.3s linear;
+}
+
+.foot-cust a:hover i {
+    transform: scale(1.4);
+}
+
+.fa-facebook {
+    color: blue;
+}
+
+.fa-instagram {
+    color: #e84393;
+}
+
+.fa-twitter {
+    color: #0097e6;
+}
+
+.fa-github {
+    color: purple;
+}
+
+.fa-linkedin {
+    color: cyan;
+}
+
+/* ============================================================================= */
+
+/*home html paragraph*/
+.home-section-p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:1.2vw;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: justify;
+}
+
+.home-cat {
+    margin: auto;
+    width: 70%;
+    border: none;
+}
+
+.home-cat img {
+    height: auto;
+    width: 90%;
+}
+
+.home-vid {
+    margin: auto;
+    width: fit-content;
+    height: fit-content;
+    border: 10px solid lightslategray;
+}
+
+.coding {
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 10px;
+    text-align: left;
+    background-color: lightgray;
+    border: 5px solid grey;
+}
+
+.coding pre {
+    white-space:pre-line;
+}
+
+/* ============================================================================= */
+
+/*customizing the list index of books*/
+.books-list {
+    margin-left: 30px;
+    align-items: left;
+    width: 30%;
+    padding: 2px;
+    background-color: lightgray;
+    /* border: 5px solid gray; */
+    border: 5px solid grey;
+}
+
+.books-list li {
+    text-align: left;
+    font-size:1vw;
+}
+
+.books-list h6 {
+    font-size:1vw;
+}
+
+.books-img img {
+    margin: auto;
+    align-items: center;
+    width: 30%;
+    padding: 10px;
+    background-color: lightgray;
+    /* border: 5px solid gray; */
+    border: 5px solid grey;
+}
+
+.book-img-container {
+    width: 100%;
+    text-align: center;
+}
+
+.amzn-link {
+    text-decoration: none;
+    border: 4px solid black;
+    border-radius: 6px;
+}

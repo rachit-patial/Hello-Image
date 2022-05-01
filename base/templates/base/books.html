@@ -1,0 +1,198 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+
+<link rel='stylesheet' type='text/css' media='screen' href="{% static 'styles/index.css' %}">
+
+<div class="inner-layer-main">
+<!--gotta put under the image tag-->
+<h1>BOOKS</h1>
+
+<!--one image to fill the space-->
+<div class='image-sizeup'>
+    <section>
+        <img src="{% static 'images/book01.jpg' %}"/>
+    </section>
+</div>
+
+<!--Intro para-->
+<div>
+    <section>
+
+        <h2>Top 10 books for an aspiring Computer Vision Student</h2>
+    </section>
+<section>
+    <p>
+        This article will list and briefly review the top ten computer vision books we recommend to read in 2022.
+    </p>
+    <p>
+        Computer Vision is the most technologically mature field in modern Artificial Intelligence (AI).
+        The ability to automate human sight using machine vision opens up huge opportunities across every
+        sector of the economy. From agriculture to retail, from insurance to construction, computer vision
+        applications are applied to a wide range of industry-specific use cases.<br>
+    </p>
+
+</section>
+</div>
+
+<!--Listing the books as hyperlinks-->
+<div class="books-list">
+    <section>
+        <h6> Index <h6>
+        <ol>
+            <li><a href="#firstB">Computer Vision: Algorithms and Applications</a></li>
+            <li><a href="#secondB">Practical Deep Learning for Cloud, Mobile and Edge</a></li>
+            <li><a href="#thirdB">Computer Vision: Models, Learning, and Inference</a></li>
+            <li><a href="#fourthB">Computer Vision: A Modern Approach</a></li>
+            <li><a href="#fifthB">Modern Computer Vision with PyTorch</a></li>
+            <li><a href="#sixthB">Learning OpenCV 4 Computer Vision with Python 3</a></li>
+            <li><a href="#seventhB">Computer Vision: Principles, Algorithms, Applications, Learning</a></li>
+            <li><a href="#eigthB">Computer Vision Metrics: Survey, Taxonomy, and Analysis</a></li>
+            <li><a href="#ninethB">Multiple View Geometry in Computer Vision</a></li>
+            <li><a href="#tenthB">Programming Computer Vision with Python</a></li>
+        </ol>
+    </section>
+</div>
+
+<hr>
+<hr>
+<hr>
+
+<!--Description of the books-->
+<div class="home-section-p books-img">
+    <h2 id="firstB">Computer Vision: Algorithms and Applications</h2>
+    <div class="book-img-container">
+    <img src="{% static 'images/firstB.jpg' %}"/>
+    </div>
+    <p>
+        The book aims to provide a comprehensive course in Computer Vision for undergraduate students in computer science;
+        it is also referred to as “the bible of Computer Vision”. Hence, the focus is on algorithms, applications, and techniques for 
+        image processing and recognition in Computer Vision.
+    </p>
+    <a href="https://www.amazon.in/Computer-Vision-Algorithms-Applications-Science/dp/1848829345/ref=sr_1_4?crid=3AW3B5P3SXL3L&keywords=Computer+Vision+and+Algorithms&qid=1651295402&sprefix=computer+vision+and+algorithms%2Caps%2C310&sr=8-4"
+    target="_blank" class="amzn-link">
+    <strong><i>Get Computer Vision: Algorithms and Applications on Amazon</i></strong>
+    </a>
+      
+    <h2 id="secondB">Practical Deep Learning for Cloud, Mobile and Edge</h2>
+    <div class="book-img-container">
+    <img src="{% static 'images/secondB.jpg' %}"/>
+    </div>
+    <p>
+        A step-by-step guide on how to build practical deep learning applications for the cloud, mobile, and edge devices using a hands-on approach. The book covers how to train, tune and deploy modern computer vision models with Keras, TensorFlow, TensorFlow Lite,
+        and Core ML. It covers how to develop AI applications for various devices such as Raspberry Pi,
+        NVIDIA Jetson Nano, Google Coral, and others.
+    </p>
+    <a href="https://www.amazon.in/Practical-Deep-Learning-Cloud-Mobile/dp/9352139240/ref=sr_1_1?crid=2T62OE5PW0ZVY&keywords=Practical+Deep+Learning+for+Cloud%2C+Mobile+and+Edge&qid=1651296468&sprefix=practical+deep+learning+for+cloud%2C+mobile+and+edge%2Caps%2C246&sr=8-1"
+    target="_blank" class="amzn-link">
+    <strong><i>Get Practical Deep Learning for Cloud, Mobile and Edge on Amazon</i></strong>
+    </a>
+
+    <h2 id="thirdB">Computer Vision: Models, Learning, and Inference</h2>
+    <div class="book-img-container">
+    <img src="{% static 'images/thirdB.jpg' %}"/>
+    </div>
+    <p>
+        This is a great introductory book (for students) and covers a wide range of computer vision techniques and problems.
+        The book takes more time to introduce computer vision and spends useful time on foundational topics related to probabilistic modeling.
+    </p>
+    <a href="https://www.amazon.in/Computer-Vision-Models-Learning-Inference/dp/1107011795/ref=sr_1_1?crid=1VGSHA4PMUN6U&keywords=Computer+Vision%3A+Models%2C+Learning%2C+and+Inference&qid=1651296659&sprefix=computer+vision+models%2C+learning%2C+and+inference%2Caps%2C299&sr=8-1"
+    target="_blank" class="amzn-link">
+    <strong><i>Get Computer Vision: Models, Learning, and Inference on Amazon</i></strong>
+    </a>
+
+    <h2 id="fourthB">Computer Vision: A Modern Approach</h2>
+    <div class="book-img-container">
+    <img src="{% static 'images/fourthB.jpg' %}"/>
+    </div>
+    <p>
+        This is an introductory textbook on computer vision and is perhaps more broad in the topics covered than many of the other textbooks. Although broad,
+        it may be less loved (popular) than some of the other introductory text as it can be challenging to read: it dives right in.
+    </p>
+    <a href="https://www.amazon.in/Computer-Vision-Models-Learning-Inference/dp/1107011795/ref=sr_1_1?crid=1VGSHA4PMUN6U&keywords=Computer+Vision%3A+Models%2C+Learning%2C+and+Inference&qid=1651296659&sprefix=computer+vision+models%2C+learning%2C+and+inference%2Caps%2C299&sr=8-1"
+    target="_blank" class="amzn-link">
+    <strong><i>Get Computer Vision: A Modern Approach on Amazon</i></strong>
+    </a>
+
+    <h2 id="fifthB">Modern Computer Vision with PyTorch</h2>
+    <div class="book-img-container">
+    <img src="{% static 'images/fifthB.jpg' %}"/>
+    </div>
+    <p>
+        The book covers the basics about artificial neural networks (ANN), the fundamentals about PyTorch, and multiple basic deep learning examples using PyTorch. Moreover, the book discusses major computer vision topics such as object classification and detection, image manipulations, and more. Also, advanced topics such as GANs, 
+        reinforcement learning, self-attention, few-shot learning, etc., are covered, while all the discussions come with specific PyTorch examples.
+    </p>
+    <a href="https://www.amazon.in/Modern-Computer-Vision-PyTorch-applications/dp/1839213477/ref=sr_1_1_sspa?crid=MD5LP8PCP631&keywords=Modern+Computer+Vision+with+PyTorch&qid=1651297080&sprefix=modern+computer+vision+with+pytorch%2Caps%2C441&sr=8-1-spons&psc=1&smid=A15DBATYR506U3&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUFGMUlNTDUyT0dDMzAmZW5jcnlwdGVkSWQ9QTA5NjgzODczUzZNNEtRQUJFUjYwJmVuY3J5cHRlZEFkSWQ9QTAyODY1MTgxTjFIRU1YQ1lHMlVNJndpZGdldE5hbWU9c3BfYXRmJmFjdGlvbj1jbGlja1JlZGlyZWN0JmRvTm90TG9nQ2xpY2s9dHJ1ZQ=="
+    target="_blank" class="amzn-link">
+    <strong><i>Get Modern Computer Vision with PyTorch on Amazon</i></strong>
+    </a>
+
+    <h2 id="sixthB">Learning OpenCV 4 Computer Vision with Python 3</h2>
+    <div class="book-img-container">
+    <img src="{% static 'images/sixthB.jfif' %}"/>
+    </div>
+    <p>
+        This book helps those who are getting started with Computer Vision but also experts in the domain.  It covers the theory and practice of building apps with OpenCV 4 and Python 3 on various platforms. Learn about how to perform the basic operations, how to perform image processing, video analysis, and depth estimation and segmentation. It features two popular challenges: face detection and face recognition. You will also learn about object classification
+        and machine learning concepts, which are used to create and use object detectors, and even track objects in a video camera feed.
+    </p>
+    <a href="https://www.amazon.in/Learning-OpenCV-Computer-Vision-Python/dp/1789531616/ref=sr_1_1?crid=BFEPCURR5O2G&keywords=Learning+OpenCV+4+Computer+Vision+with+Python+3&qid=1651297294&sprefix=learning+opencv+4+computer+vision+with+python+3%2Caps%2C299&sr=8-1"
+    target="_blank" class="amzn-link">
+    <strong><i>Get Learning OpenCV 4 Computer Vision with Python 3 on Amazon</i></strong>
+    </a>
+
+    <h2 id="seventhB">Computer Vision: Principles, Algorithms, Applications, Learning</h2>
+    <div class="book-img-container">
+    <img src="{% static 'images/seventhB.jpg' %}"/>
+    </div>
+    <p>
+        When it comes to the fundamental concepts of Computer Vision – ranging from classic Computer Vision techniques to deep learning –  this is the best book available on the market. It covers the basic computer vision methodology, 
+        including the essential elements of the theory, while highlighting algorithmic and practical design constraints.
+    </p>
+    <a href="https://www.amazon.in/Computer-Vision-Principles-Algorithms-Applications/dp/012809284X/ref=sr_1_2?crid=2UHTA74EP3UN3&keywords=Computer+Vision%3A+Principles%2C+Algorithms%2C+Applications%2C+Learning&qid=1651297389&sprefix=computer+vision+principles%2C+algorithms%2C+applications%2C+learning%2Caps%2C290&sr=8-2"
+    target="_blank" class="amzn-link">
+    <strong><i>Get Computer Vision: Principles, Algorithms, Applications, Learning on Amazon</i></strong>
+    </a>
+
+    <h2 id="eigthB">Computer Vision Metrics: Survey, Taxonomy, and Analysis</h2>
+    <div class="book-img-container">
+    <img src="{% static 'images/eigthB.jpg' %}"/>
+    </div>
+    <p>
+        An extensive survey and analysis of more than 100 current and historical feature description and machine vision methods. The book covers image capture and representation, image pre-processing, global and regional features, local feature design concepts, classification, and more.
+        Overall, the book is very well researched and cited, making it a useful overview and survey book as it points to the relevant references. Hence,
+        the book is commonly used by Computer Vision engineers as a reference for various computer vision techniques and algorithms.
+    </p>
+    <a href="https://www.amazon.in/Computer-Vision-Metrics-Taxonomy-Analysis/dp/1430259299/ref=sr_1_1?crid=1PPT93MPFBPPB&keywords=Computer+Vision+Metrics%3A+Survey%2C+Taxonomy%2C+and+Analysis&qid=1651297580&sprefix=computer+vision+metrics+survey%2C+taxonomy%2C+and+analysis%2Caps%2C270&sr=8-1"
+    target="_blank" class="amzn-link">
+    <strong><i>Get Computer Vision Metrics: Survey, Taxonomy, and Analysis on Amazon</i></strong>
+    </a>
+
+    <h2 id="ninethB">Multiple View Geometry in Computer Vision</h2>
+    <div class="book-img-container">
+    <img src="{% static 'images/ninthB.jpg' %}"/>
+    </div>
+    <p>
+        It is a reasonably advanced book (graduate level) on a specialized topic in computer vision, specifically on the problem
+         and methods related to inferring geometry from multiple images.
+    </p>
+    <a href="https://www.amazon.in/Multiple-View-Geometry-Computer-Vision/dp/0521540518/ref=sr_1_1?crid=HCOL78H1T27F&keywords=Multiple+View+Geometry+in+Computer+Vision&qid=1651297658&sprefix=multiple+view+geometry+in+computer+vision%2Caps%2C307&sr=8-1"
+    target="_blank" class="amzn-link">
+    <strong><i>Get Multiple View Geometry in Computer Vision on Amazon</i></strong>
+    </a>
+
+    <h2 id="tenthB">Programming Computer Vision with Python</h2>
+    <div class="book-img-container">
+    <img src="{% static 'images/tenthB.jpg' %}"/>
+    </div>
+    <p>
+        This is a hands-on book that focuses on teaching you how to perform basic computer vision tasks in Python, mostly with PIL, although with a basic introduction to OpenCV as well. I’m a fan of this book,
+        although minor modifications are required to use updated libraries (e.g. Pillow). An update to this book is due!
+    </p>
+    <a href="https://www.amazon.in/Programming-Computer-Vision-Python-Algorithms/dp/9350237660/ref=sr_1_3?crid=1DAVMS0IEXTU0&keywords=Programming+Computer+Vision+with+Python&qid=1651297760&sprefix=programming+computer+vision+with+python%2Caps%2C280&sr=8-3"
+    target="_blank" class="amzn-link">
+    <strong><i>Get Programming Computer Vision with Python on Amazon</i></strong>
+    </a>
+</div>
+
+</div>
+{% endblock content %}

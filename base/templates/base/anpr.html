@@ -1,0 +1,169 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+
+<link rel='stylesheet' type='text/css' media='screen' href="{% static 'styles/index.css' %}">
+
+<div class="inner-layer-main">
+<!--gotta put under the image tag-->
+<h1>ANPR</h1>
+
+<!--one image to fill the space-->
+<div class='image-sizeup'>
+    <section>
+        <img src="{% static 'images/Anpr.jpg' %}"/>
+    </section>
+</div>
+
+<!--ANPR Introduction-->
+<div class="home-section-p">
+    <section>
+        <h2>ANPR</h2>
+        <p><i>Using Python</i></p>
+    </section>
+<section>
+    <p>
+    ANPR is used to detect the license plate number and is quite extensively used in western nations.
+    </p>
+</section>
+</div>
+
+<!--Explanantion of ANPR-->
+{% comment %} <div> {% endcomment %}
+<section>
+    <div class="coding">
+        <h3>Importing Libraries</h3>
+        <p> You need to import the following libraries</p>
+        <hr>
+        <div>
+            <code>
+                import cv2<br>
+                from matplotlib import pyplot as plt<br>
+                import numpy as np<br>
+                import imutils<br>
+                import easyocr<br>
+            </code>
+        </div>
+    </div>
+    
+    <br>
+
+    <div class="coding">
+        <h3>Reading the image</h3>
+        <p> You need to read the image you gonna work on</p>
+        <hr>
+        <div>
+            <code>
+                img = cv2.imread('car.jpg')<br>
+                gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)<br>
+                plt.imshow(cv2.cvtColor(gray, cv2.COLOR_BGR2RGB))<br>
+            </code>
+        </div>
+    </div>
+    
+    <br>
+
+
+    <div class="coding">
+        <h3>Detect the edges</h3>
+        <p> we need to detect the edges in the image</p>
+        <hr>
+        <div>
+            <code>
+                bfilter = cv2.bilateralFilter(gray, 11, 17, 17)<br>
+                edged = cv2.Canny(bfilter, 30, 200)<br>
+                plt.imshow(cv2.cvtColor(edged, cv2.COLOR_BGR2RGB))<br>
+            </code>
+        </div>
+    </div>
+
+    <br>
+
+    
+    <div class="coding">
+        <h3>Tuning the contours</h3>
+        <p> Choose the conturs as per the reequirements</p>
+        <hr>
+        <div>
+            <code>
+                keypoints = cv2.findContours(edged.copy(), cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)<br>
+                contours = imutils.grab_contours(keypoints)<br>
+                contours = sorted(contours, key=cv2.contourArea, reverse=True)[:10]<br>
+                location = None<br>
+                for contour in contours:<br>
+                approx = cv2.approxPolyDP(contour, 30, True)<br>
+                if len(approx) == 4:<br>
+                location = approx<br>
+                break
+            </code>
+        </div>
+    </div>
+
+    <br>
+    
+    <div class="coding">
+        <h3>Masking the image</h3>
+        <p> making the mask</p>
+        <hr>
+        <div>
+            <code>
+                mask = np.zeros(gray.shape, np.uint8)<br>
+                new_image = cv2.drawContours(mask, [location], 0, 255, -1)<br>
+                new_image = cv2.bitwise_and(img, img, mask=mask)<br>
+            </code>
+        </div>
+    </div>
+    
+    <br>
+
+    <div class="coding">
+        <h3>Showing the license plate</h3>
+        <p> We will only be selecting the area where the license plate is</p>
+        <hr>
+        <div>
+            <code>
+                (x,y) = np.where(mask==255)<br>
+                (x1, y1) = (np.min(x), np.min(y))<br>
+                (x2, y2) = (np.max(x), np.max(y))<br>
+                cropped_image = gray[x1:x2+1, y1:y2+1]<br>
+            </code>
+        </div>
+    </div>
+
+    <br>
+    
+    <div class="coding">
+        <h3>Using Easyocr</h3>
+        <p> use eayocr to read the number</p>
+        <hr>
+        <div>
+            <code>
+                reader = easyocr.Reader(['en'])<br>
+                result = reader.readtext(cropped_image)<br>
+                result<br>
+            </code>
+        </div>
+    </div>
+    
+    <br>
+      
+    <div class="coding">
+        <h3>Rendering the image</h3>
+        <p> show the output image</p>
+        <hr>
+        <div>
+            <code>
+                text = result[0][-2]<br>
+                font = cv2.FONT_HERSHEY_SIMPLEX<br>
+                res = cv2.putText(img, text=text, org=(approx[0][0][0], approx[1][0][1]+60), fontFace=font, fontScale=1, color=(0,255,0), thickness=2, lineType=cv2.LINE_AA)<br>
+                res = cv2.rectangle(img, tuple(approx[0][0]), tuple(approx[2][0]), (0,255,0),3)<br>
+                plt.imshow(cv2.cvtColor(res, cv2.COLOR_BGR2RGB))<br>
+            </code>
+        </div>
+    </div>
+    
+    </section>
+{% comment %} </div>     {% endcomment %}
+</div>
+
+{% endblock content %}
